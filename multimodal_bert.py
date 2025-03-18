@@ -84,6 +84,6 @@ def train(model, dataloader, epochs=5, lr=1e-4):
         scheduler.step()
         print(f"Epoch {epoch+1}, Loss: {total_loss/len(dataloader)}")
 
-# Example Training
-# model = MultimodalBERT()
-# train(model, dataloader)
+
+model = MultimodalBERT()
+train(model, dataloader)
