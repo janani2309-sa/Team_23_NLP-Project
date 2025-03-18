@@ -90,9 +90,8 @@ def train(model, dataloader, epochs=5, lr=1e-4):
         
         print(f"Epoch {epoch+1}, Loss: {total_loss/len(dataloader)}")
 
-# Example Training Execution
-# tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-# dataset = HatefulMemesDataset(df, 'data/images', transform=transform, tokenizer=tokenizer)
-# dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
-# model = FacebookAIBaseline()
-# train(model, dataloader)
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+dataset = HatefulMemesDataset(df, 'data/images', transform=transform, tokenizer=tokenizer)
+dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
+model = FacebookAIBaseline()
+train(model, dataloader)
